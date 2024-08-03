@@ -9,8 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@heroicons/react@2.0.13/dist/heroicons.css">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="estilo.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>   
+    <link rel="stylesheet" href="styles/estilo.css">
 
 </head>
 <body>
@@ -45,58 +44,66 @@
                 <div class="col-md-11">
                     <form class="d-flex portfolio-search-form">
                         <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
-                        <button class="btn btn-light" type="submit">
+                        <button class="btn btn-light" type="button" onclick="searchPortfolio()">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </form>
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center">
+                            <i class="fa-solid fa-filter fa-2x me-3"></i>
+                            <div class="btn-group">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                       CATEGORIAS
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li class="btn" onclick="addFilter('personal', 1)">PERSONAL</li>
+                                    <li class="btn" onclick="addFilter('academico', 1)">ACADEMICO</li>
+                                    <li class="btn" onclick="addFilter('profesional', 1)">PROFESIONAL</li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
+                                    LENGUAJE
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li class="btn" onclick="addFilter('typescript', 2)">TYPESCRIPT</li>
+                                    <li class="btn" onclick="addFilter('javascript', 2)">JAVASCRIPT</li>
+                                    <li class="btn" onclick="addFilter('java', 2)">JAVA</li>
+                                    <li class="btn" onclick="addFilter('python', 2)">PYTHON</li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    FRAMEWORK
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li class="btn" onclick="addFilter('reactjs', 3)">REACTJS</li>
+                                    <li class="btn" onclick="addFilter('nextjs', 3)">NEXTJS</li>
+                                    <li class="btn" onclick="addFilter('spring', 3)">SPRING</li>
+                                </ul>
+                            </div>
+                            <div class="hide clear-filter-button">
+                                <button type="button" class="btn btn-warning" onclick="cleanFilter()">
+                                    LIMPIAR
+                                    <i class="fa-solid fa-x"></i>
+                                </button>    
+                            </div>
+                            <div class="d-flex align-items-center ms-auto ">
+                                <button type="button" class="btn selected-option" onclick="switchOrderDateForm()">
+                                    MAS RECIENTE 
+                                    <i class="fa-solid fa-up-long up-icon"></i>
+                                    <i class="fa-solid fa-down-long hide down-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>   
+        
                 </div>
                 <a href="./forms/form-proyecto.html" class="d-flex align-items-center addProject">
                     <i class="fa-solid fa-circle-plus"></i>
                     <p>Agregar Proyecto</p>
                 </a>
             </div>
-            <div class="container-fluid bg-dark text-white">
-                <div class="d-flex align-items-center">
-                    <i class="fa-solid fa-filter fa-2x me-3"></i>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                               Categorías
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><button class="btn">Personal</button></li>
-                            <li><button class="btn">Academico</button></li>
-                            <li><button class="btn">Profesional</button></li>
-                        </ul>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> 
-                            Lenguaje
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><button class="btn">TypeScript</button></li>
-                            <li><button class="btn">JavaScript</button></li>
-                            <li><button class="btn">Java</button></li>
-                            <li><button class="btn">Python</button></li>
-                        </ul>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Framework
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><button class="btn">ReactJS</button></li>
-                            <li><button class="btn">NextJS</button></li>
-                            <li><button class="btn">Spring</button></li>
-                        </ul>
-                    </div>
-                       
-                    <button type="button" class="btn btn-warning">
-                        Limpiar
-                        <i class="fa-solid fa-x"></i>
-                    </button>
-                    <button type="button" class="btn btn-warning">Más reciente</button>
-                </div>
-            </div>   
         </div> 
           
         <div class="portfolio-body">
@@ -104,7 +111,7 @@
                 <a class="portfolio-links" href="https://github.com/BrandonStambuk/Portafolio/blob/main/formulario/esferas.js">
                     <div class="card-body">
                         <div class="card-title">
-                            <p class="display-4">microsoft/mqlib</p>
+                            <p class="display-4">dinero/dinero.js</p>
                         </div>
                         <div class="d-flex align-items-center">
                             <div class="flex-column align-self-start">
@@ -116,14 +123,43 @@
                                 </svg>
                             </div>
                             <div class="card-text">        
-                                <p class="lead">Qlib es una plataforma de inversión cuantitativa de código abierto orientada a la IA que tiene como objetivo realizar el potencial, potenciar la investigación y crear valor utilizando tecnologías de IA en la inversión cuantitativa, desde la exploración de ideas hasta la implementación de producciones. Qlib admite diversos paradigmas de modelado de aprendizaje automático, incluidos el aprendizaje supervisado, el modelado de dinámicas de mercado y el aprendizaje por refuerzo.</p>
+                                <p class="lead">Money is complex, and the primitives of the language aren't enough to properly represent it. Dinero.js is a JavaScript library that lets you express monetary values, but also perform mutations, conversions, comparisons, formatting, and overall make money manipulation easier and safer in your application.</p>
                             </div>
                             <img src="assets/github.svg" alt="Logo de GitHub">
                         </div>
                         <div class="tags">
-                            <span class="badge bg-secondary">Proyecto Académico</span>
-                            <span class="badge bg-secondary">TypeScript</span>
-                            <span class="badge bg-secondary">NextJS</span>
+                            <span class="badge">Proyecto Profesional</span>
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">ReactJS</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a class="portfolio-links" href="https://github.com/BrandonStambuk/Portafolio/blob/main/formulario/esferas.js">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <p class="display-4">algolia/instantsearch</p>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-column align-self-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v11.488M7.515 11.25L12 15.75m4.485-4.5L12 11.25" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v11.488M7.515 11.25L12 15.75m4.485-4.5L12 11.25" />
+                                </svg>
+                            </div>
+                            <div class="card-text">        
+                                <p class="lead">Libraries for building performant and instant search and recommend experiences with Algolia. Compatible with JavaScript, TypeScript, React and Vue.</p>
+                            </div>
+                            <img src="assets/github.svg" alt="Logo de GitHub">
+                        </div>
+                        <div class="tags">
+                            <span class="badge">Proyecto Profesional</span>
+                            <span class="badge">Python</span>
+                            <span class="badge">Java</span>
+                            <span class="badge">Spring</span>
                         </div>
                     </div>
                 </a>
@@ -149,37 +185,9 @@
                             <img src="assets/github.svg" alt="Logo de GitHub">
                         </div>
                         <div class="tags">
-                            <span class="badge bg-secondary">Proyecto Académico</span>
-                            <span class="badge bg-secondary">TypeScript</span>
-                            <span class="badge bg-secondary">NextJS</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a class="portfolio-links" href="https://github.com/BrandonStambuk/Portafolio/blob/main/formulario/esferas.js">
-                    <div class="card-body">
-                        <div class="card-title">
-                            <p class="display-4">microsoft/mqlib</p>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="flex-column align-self-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v11.488M7.515 11.25L12 15.75m4.485-4.5L12 11.25" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v11.488M7.515 11.25L12 15.75m4.485-4.5L12 11.25" />
-                                </svg>
-                            </div>
-                            <div class="card-text">        
-                                <p class="lead">Qlib es una plataforma de inversión cuantitativa de código abierto orientada a la IA que tiene como objetivo realizar el potencial, potenciar la investigación y crear valor utilizando tecnologías de IA en la inversión cuantitativa, desde la exploración de ideas hasta la implementación de producciones. Qlib admite diversos paradigmas de modelado de aprendizaje automático, incluidos el aprendizaje supervisado, el modelado de dinámicas de mercado y el aprendizaje por refuerzo.</p>
-                            </div>
-                            <img src="assets/github.svg" alt="Logo de GitHub">
-                        </div>
-                        <div class="tags">
-                            <span class="badge bg-secondary">Proyecto Académico</span>
-                            <span class="badge bg-secondary">TypeScript</span>
-                            <span class="badge bg-secondary">NextJS</span>
+                            <span class="badge">Proyecto Academico</span>
+                            <span class="badge">TypeScript</span>
+                            <span class="badge">NextJS</span>
                         </div>
                     </div>
                 </a>
@@ -201,6 +209,8 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>   
     <script src="script.js"></script>
+    <script src="scripts/portfolio.js"></script>
 </body>
 </html>
