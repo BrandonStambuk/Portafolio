@@ -474,7 +474,7 @@ html{
     margin: auto;
 }
 .portfolio h2{
-    font-size: 48px;
+    font-size: 58px;
     font-family: 'Righteous';
     text-align: center;
     padding: 20px 0;
@@ -532,10 +532,16 @@ html{
     margin: auto;
 }
 .contacto h2{
-    font-size: 48px;
+    font-size: 45px;
     font-family: 'Righteous';
-    text-align: center;
-    padding: 20px 0;
+    text-align: left;
+    padding: 10px 0;
+}
+.contacto p{
+    margin-bottom: 30px;
+    color: #98968B;
+    font-size: 20px;
+    text-align: justify;
 }
 .contacto .fila{
     display: flex;
@@ -747,4 +753,34 @@ footer .arriba{
    margin-top: 10px;
    padding: 15px;
    border-radius: 10px;
+}
+
+
+
+#agregar-red {
+    display: flex;
+    align-items: center;
+    
+}
+
+
+#boton-agregar-red{
+    margin-top: 100px;
+}
+
+
+
+.plus-circle {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fea609;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    margin-right: 10px;
+    font-weight: bold;
+    margin-top: 70px;
+    margin-left: 60px;
 }
