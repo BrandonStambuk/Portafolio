@@ -10,23 +10,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@heroicons/react@2.0.13/dist/heroicons.css">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles/estilo.css">
-
+    <link rel="stylesheet" href="/formulario/styles.css">
 </head>
 <body>
     <!-- MENU ENCABEZADO -->
     <div class="contenedor-header">
         <header>
             <div class="logo">
-                <a href="#">Nick</a>
+                <a href="#">USUARIO</a>
             </div>
-            <nav id="nav">
+            <nav id="menu">
                 <ul>
                     <li><a href="#inicio" onclick="seleccionar()">INICIOO</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
-                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
+                  <!--  <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>-->
+                    <li><a href="#portfolio" onclick="seleccionar()">PROYECTOS</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">EXPERIENCIAS</a></li>
                     <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
-                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">COMENTARIOS</a></li>
+                 <!--    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>-->
+                    <li><a href="#contacto" onclick="seleccionar()">REDES</a></li>
                 </ul>
             </nav>
             <div class="nav-responsive" onclick="mostrarOcultarMenu()">
@@ -90,9 +92,9 @@
                             </div>
                             <div class="d-flex align-items-center ms-auto ">
                                 <button type="button" class="btn selected-option" onclick="switchOrderDateForm()">
-                                    MAS RECIENTE 
-                                    <i class="fa-solid fa-up-long up-icon"></i>
-                                    <i class="fa-solid fa-down-long hide down-icon"></i>
+                                    MAS ANTIGUO 
+                                    <i class="fa-solid fa-up-long hide up-icon"></i>
+                                    <i class="fa-solid fa-down-long down-icon"></i>
                                 </button>
                             </div>
                         </div>
@@ -195,6 +197,95 @@
 
         </div>
     </section>
+
+    <!-- SECCION CONTACTO -->
+    <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <h2>CONTACTO</h2>
+            <div class="fila">
+                <!-- Formulario -->
+                <div class="col">
+                    <input type="text" placeholder="Tú Nombre">
+                    <input type="text" placeholder="Número telefónico">
+                    <input type="text" placeholder="Dirección de correo">
+                    <input type="text" placeholder="Tema">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    <button>
+                        Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
+                        <span class="overlay"></span>
+                    </button>
+                </div>
+                <!-- Mapa -->
+                <div class="col">
+                    <img src="img/ubicacion.png" alt="">
+                    <div class="info">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Nicaragua 159, San Rafael Mza
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                Llamanos: 2384 - 4343443 
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                Email: cw@example.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <div class="fila">
+                <div class="col">
+                    <h2>Mis redes <span style="color: #fea609;">sociales</span></h2>
+                    <p>Aqui encontraras todas mis redes sociales junto a mis publicaciones mas recientes por si quieres seguirme! En las que encontraras posts interesantes de tecnologias !</p>
+                </div>
+    
+                <div class="col">
+                    <div id="agregar-red">
+                        <a href="formularioRedes/formularioRedes.html">
+                            <span class="plus-circle">+</span>    
+                        </a>
+                        <p id="boton-agregar-red"> Agregar red social</p>
+                    </div>
+                </div>
+            </div>            
+    
+            <div class="fila">
+                <!-- Formulario -->
+                <div class="col">
+                    <div class="card">
+                        <img src="img/logoLinkedin.png" id="linkedin" alt="">
+                        <img src="img/headerLinkedin.jpg" id="image-post" alt="">
+                        <img src="img/post1.jpg" id="image-post" alt="">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="img/github.png" id="networks" alt="">
+                        <img src="img/LetraGithub.png" id="network-title" alt="">
+                        <img src="img/github1.jpg" id="image-post" alt="">
+                        <img src="img/github2.png" id="image-post" alt="">
+                    </div>
+                </div>
+                <!-- Mapa -->
+                <div class="col">
+                    <div class="card">
+                        <img src="img/X.png" id="networks" alt="">
+                        <img src="img/postX.jpg" id="image-post" alt="">
+                        <img src="img/postX2.png" id="image-post" alt="">
+                        <img src="img/postX3.jpg" id="image-post" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- footer -->
     <footer>
         <a href="#inicio" class="arriba">

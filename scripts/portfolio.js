@@ -1,7 +1,6 @@
 // ESTILOS SIMPLES PARA BUSQUEDA: 
 
 window.onload = () => {
-    console.log('llega');
     if (localStorage.getItem('portfolio_id') == null) localStorage.setItem('portfolio_id', 0);
     len = localStorage.getItem('portfolio_id'); 
     for (i = 0; i<len; i++) 
@@ -58,7 +57,7 @@ function addFilter(str, index) {
         filters[index] = 'proyecto '+filters[index];
     }
     applyFilters(getFilters(filters));  
-    document.querySelector('.clear-filter-button').classList.remove('hide');
+    document.querySelector('.portfolio .clear-filter-button').classList.remove('hide');
     applyToToggles(filters);
 }
 
@@ -72,7 +71,7 @@ function getFilters(filters) {
 }
 
 function applyFilters(filters) {
-    cards = document.querySelectorAll('.card');
+    cards = document.querySelectorAll('.portfolio .card');
     cards.forEach(card => {
         matches = 0;
         badges = card.querySelector('.tags'); 
@@ -92,12 +91,12 @@ function applyFilters(filters) {
 
 function cleanFilter() {
     filters = ['simple', 'simple', 'simple', 'simple']; 
-    document.querySelector('.clear-filter-button').classList.add('hide');
+    document.querySelector('.portfolio .clear-filter-button').classList.add('hide');
     applyFilters([]);
     applyToToggles(filters); 
 }
 function applyToToggles(filters) {
-    toggles = Array.from(document.querySelector('.portfolio-header').querySelectorAll('.btn-group'));
+    toggles = Array.from(document.querySelectorAll('.portfolio-header .btn-group'));
     for (i = 1; i<filters.length; i++) {
         button = toggles[i-1].querySelector('.dropdown-toggle'); 
         valueF = 'CATEGORIAS'; 
@@ -124,7 +123,7 @@ function switchOrderDateForm() {
     invertCards(); 
 }
 function invertCards() {
-    cards = Array.from(document.querySelectorAll('.card'));
+    cards = Array.from(document.querySelectorAll('.portfolio .card'));
     cards.reverse();
     portfolioBody = document.querySelector('.portfolio-body');
     portfolioBody.innerHTML = '';
