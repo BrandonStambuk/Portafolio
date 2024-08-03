@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.container');
-    const numberOfSpheres = 6;
+    const numberOfSpheres = 10;
     const spheres = ['sphere1', 'sphere2'];
 
     for (let i = 0; i < numberOfSpheres; i++) {
