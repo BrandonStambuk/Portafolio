@@ -1,0 +1,101 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="formulario/styles.css">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="subirImagen/style.css">
+</head>
+<body>
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">USUARIO</a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIOO</a></li>
+                   
+                    <li><a href="#portfolio" onclick="seleccionar()">PROYECTOS</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">EXPERIENCIAS</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">COMENTARIOS</a></li>
+                 <!--    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>-->
+                    <li><a href="#contacto" onclick="seleccionar()">REDES</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+    <main>        
+        <div class="container">
+            <h1 id="titulo">NUEVA EXPERIENCIA</h1>
+            <div id="ingreso">
+                <div class="contenedordatos">
+                <input id="inputxt" type="text" id="nombre" name="nombre" placeholder="Nombre">
+                </div>
+                <div class="contenedordatos">
+                <input id="inputxt" type="text" id="apellido" name="apellido" placeholder="Apellido">
+                </div>
+                <div class="contenedordatos">
+                <input id="inputxt" type="email" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="contenedordatos">
+                <input id="texto" type="date" id="fecha" name="fecha" placeholder="Ingrese Fecha">
+                <input id="texto" type="date" id="fecha" name="fecha" placeholder="Ingrese Fecha">
+                </div>
+                <button onclick = showLoginDialog()>Subir Imagen</button>
+                <dialog id = "login-dialog">
+                    <div class="container">
+                        <form class="file-form" id="dropSection">
+                            <input id="fileInput" type="file" multiple accept="image/*" onchange="app.actions.handleFiles(this.files)">
+                            <label class="drop-content" for="fileInput">
+                                Arrastra tus imágenes aquí o haz click y selecciona
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none" viewBox="0 0 24 20"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                </svg>
+                            </label>
+                        </form>
+                        <div id="uploadedImage"></div>
+                        <div id="actionContainer" class="d-none">
+                            <div>
+                                <button id="clearAllBtn" onclick="app.actions.clearAll()">Limpiar</button>
+                            </div>
+                            <div>
+                                <button id="agregarBtn" onclick="app.actions.agregar()">Agregar</button>
+                            </div>
+                            <div>
+                                <button id="cancelBtn" onclick="app.actions.cancel()">Cancel</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    </div>
+
+                </dialog>
+                <div class="contenedorfile">
+                    <label for="archivo"><img id = "camaraIcon" src="formulario/imagen.png" alt ="Click aquí para subir tu foto" title ="Click aquí para subir tu foto"></label>
+                    <input id="archivo" type="file" id="foto" name="foto" placeholder="Foto">
+                </div>
+                <input id="boton" type="submit" value="Enviar">
+            </form>
+        </div>
+        <script src="subirImagen/main.js"></script>
+        <script src="formulario/esferas.js"></script>
+    </main>
+
+    <script>
+        const dialog = document.getElementById('login-dialog');
+
+        function showLoginDialog() {
+            dialog.showModal();
+        }
+
+    </script>
+</body>
+</html>
