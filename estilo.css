@@ -520,6 +520,105 @@ html{
 .portfolio .galeria .proyecto .overlay:hover h3{
     margin-bottom: 0px;
 }
+
+/* SECCION EXPERIENCIAS */
+.experiencias {
+    background-color: #21201E; /* Ajuste al color principal oscuro */
+    color: #fff; /* Mantiene el texto en blanco para contraste */
+    padding: 50px 20px;
+}
+.experiencias .contenido-seccion {
+    max-width: 1100px;
+    margin: auto;
+}
+.experiencias h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+    color: #ffffff; /* Ajuste para que coincida con el esquema de color dorado */
+}
+.filtro-categorias {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.filtro-categorias .btn-filtro {
+    background-color: #FEA609; /* Ajuste al color dorado */
+    color: #21201E; /* Texto en color oscuro para contraste */
+    border: 2px solid #FEA609; /* Borde en color dorado */
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.filtro-categorias .btn-filtro:hover {
+    background-color: #21201E; /* Fondo oscuro al hacer hover */
+    color: #FEA609; /* Texto dorado al hacer hover */
+}
+.experiencias .fila {
+    display: flex;
+    flex-wrap: wrap; /* Asegura que las tarjetas se envuelvan en nuevas líneas */
+    gap: 10px; /* Espacio entre tarjetas */
+    justify-content: flex-start; /* Alinea las tarjetas al inicio */
+}
+.experiencias .fila .item {
+    padding: 25px;
+    background-color: #2D2B29; /* Color más claro para las tarjetas */
+    position: relative;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s, box-shadow 0.3s;
+    width: calc(33.333% - 20px); /* Tres columnas con espacio entre ellas */
+    box-sizing: border-box;
+    opacity: 1;
+    visibility: visible;
+}
+.experiencias .fila .item.hidden {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute; /* Para evitar que ocupe espacio en el flujo del diseño */
+    transform: scale(0);
+}
+.experiencias .fila .item:hover {
+    background-color: #231f1a; /* Fondo dorado al hacer hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+.experiencias .fila .item:hover ~ .item {
+    transform: scale(0.9);
+    opacity: 0.6;
+}
+.experiencias .fila .item:hover ~ .item:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+.experiencias .fila .item h3 {
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
+    color: #FEA609; /* Título en color dorado */
+}
+.experiencias .fila .item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.experiencias .fila .item .casa {
+    color: #FEA609; /* Color dorado para la casa */
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+}
+.experiencias .fila .item .fecha {
+    display: block;
+    color: #FEA609; /* Color dorado para la fecha */
+    margin-bottom: 10px;
+}
+.experiencias .fila .item p {
+    line-height: 24px;
+}
+.experiencias .fila .item {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Hereda el color del elemento padre */
+}
+
 /* SECCION CONTACTO */
 .contacto{
     background-image: url(img/contact_bg.png);

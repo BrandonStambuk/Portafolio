@@ -1,0 +1,465 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
+:root {
+  --card-width: 200px;
+  --card-height: 300px;
+  --card-transition-duration: 800ms;
+  --card-transition-easing: ease;
+}
+
+/* Estilo para la tarjeta de detalles */
+.details-card {
+    background-color: #2D2B29; /* Color de fondo de la tarjeta */
+    color: #fff; /* Color de texto */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* SECCION EXPERIENCIAS */
+.experiencias {
+    background-color: #21201E; /* Ajuste al color principal oscuro */
+    color: #fff; /* Mantiene el texto en blanco para contraste */
+    padding: 50px 20px;
+    margin-bottom: 100px; /* Espacio suficiente para el carrusel */
+}
+
+.experiencias .contenido-seccion {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.experiencias h2 {
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    padding: 20px 0;
+    color: #ffffff; /* Ajuste para que coincida con el esquema de color dorado */
+}
+
+.filtro-categorias {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filtro-categorias .btn-filtro {
+    background-color: #FEA609; /* Ajuste al color dorado */
+    color: #21201E; /* Texto en color oscuro para contraste */
+    border: 2px solid #FEA609; /* Borde en color dorado */
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filtro-categorias .btn-filtro:hover {
+    background-color: #21201E; /* Fondo oscuro al hacer hover */
+    color: #FEA609; /* Texto dorado al hacer hover */
+}
+
+.experiencias .fila {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*flex-wrap: wrap; *//* Asegura que las tarjetas se envuelvan en nuevas líneas */
+    gap: 20px; /* Espacio entre tarjetas */
+    /*justify-content: flex-start;*/ /* Alinea las tarjetas al inicio */
+}
+
+.experiencias .fila .item {
+    padding: 25px;
+    background-color: #2D2B29; /* Color más claro para las tarjetas */
+    position: relative;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s, box-shadow 0.3s;
+    /*width: calc(33.333% - 20px);*/ /* Tres columnas con espacio entre ellas */
+    width: 100%; /* Ocupa todo el ancho de la fila */
+    max-width: 1600px;
+    box-sizing: border-box;
+    opacity: 1;
+    visibility: visible;
+}
+
+.experiencias .fila .item.hidden {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute; /* Para evitar que ocupe espacio en el flujo del diseño */
+    transform: scale(0);
+}
+
+.experiencias .fila .item:hover {
+    background-color: #231f1a; /* Fondo dorado al hacer hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+}
+
+.experiencias .fila .item:hover ~ .item {
+    transform: scale(0.9);
+    opacity: 0.6;
+}
+
+.experiencias .fila .item:hover ~ .item:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.experiencias .fila .item h3 {
+    font-size: 28px;
+    font-family: 'Righteous';
+    margin-bottom: 25px;
+    color: #FEA609; /* Título en color dorado */
+}
+
+.experiencias .fila .item h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.experiencias .fila .item .casa {
+    color: #FEA609; /* Color dorado para la casa */
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+}
+
+.experiencias .fila .item .fecha {
+    display: block;
+    color: #FEA609; /* Color dorado para la fecha */
+    margin-bottom: 10px;
+}
+
+.experiencias .fila .item p {
+    line-height: 24px;
+}
+
+.experiencias .fila .item {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Hereda el color del elemento padre */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #21201E; /* Color de fondo oscuro */
+    /*color: #fff;*/ /* Color del texto en blanco */
+    /*font-family: 'Montserrat', sans-serif; *//* Fuente que estás usando */
+    /*overflow-x: hidden;*/ /* Evita el desplazamiento horizontal */
+}
+
+/* Estilo del carrusel */
+.app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Ajusta el margen superior para que no se superponga */
+}
+
+.app__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
+    overflow: hidden;
+    background-color: #21201E;
+}
+
+.app__bg::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.app__bg__image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateX(var(--image-translate-offset, 0));
+    width: 180%;
+    height: 180%;
+    transition: transform 1000ms ease, opacity 1000ms ease;
+    overflow: hidden;
+}
+
+/*html, body{
+    height: 100%;
+}*/
+
+.app__bg__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.app__bg__image.current--image {
+    opacity: 1;
+    --image-translate-offset: 0;
+}
+
+.app__bg__image.previous--image,
+.app__bg__image.next--image {
+    opacity: 0;
+}
+
+.app__bg__image.previous--image {
+    --image-translate-offset: -25%;
+}
+
+.app__bg__image.next--image {
+    --image-translate-offset: 25%;
+}
+
+.cardList {
+    position: absolute;
+    width: calc(3 * var(--card-width));
+    height: auto;
+    bottom: 0; /* Alinea el carrusel en la parte inferior */
+}
+
+.cardList__btn {
+    --btn-size: 35px;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.cardList__btn.btn--left {
+    left: -5%;
+}
+
+.cardList__btn.btn--right {
+    right: -5%;
+}
+
+.cardList__btn .icon {
+    width: 100%;
+    height: 100%;
+}
+
+.cardList__btn .icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.cardList .cards__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.card {
+    --card-translateY-offset: 100vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateX(var(--card-translateX-offset)) translateY(var(--card-translateY-offset)) rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset));
+    display: inline-block;
+    width: var(--card-width);
+    height: var(--card-height);
+    transition: transform var(--card-transition-duration) var(--card-transition-easing);
+    user-select: none;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+    transition: opacity var(--card-transition-duration) var(--card-transition-easing);
+    opacity: calc(1 - var(--opacity));
+}
+
+.card__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card__image img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card.current--card {
+    --current-card-rotation-offset: 0;
+    --card-translateX-offset: 0;
+    --card-rotation-offset: var(--current-card-rotation-offset);
+    --card-scale-offset: 1.2;
+    --opacity: 0.8;
+}
+
+.card.previous--card {
+    --card-translateX-offset: calc(-1 * var(--card-width) * 1.1);
+    --card-rotation-offset: 25deg;
+}
+
+.card.next--card {
+    --card-translateX-offset: calc(var(--card-width) * 1.1);
+    --card-rotation-offset: -25deg;
+}
+
+.card.previous--card,
+.card.next--card {
+    --card-scale-offset: 0.9;
+    --opacity: 0.4;
+}
+
+.infoList {
+    position: absolute;
+    width: calc(3 * var(--card-width));
+    height: var(--card-height);
+    pointer-events: none;
+}
+
+.infoList .info__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.info {
+    margin-bottom: calc(var(--card-height) / 8);
+    margin-left: calc(var(--card-width) / 1.5);
+    transform: translateZ(2rem);
+    transition: transform var(--card-transition-duration) var(--card-transition-easing);
+}
+
+.info .text {
+    position: relative;
+    font-family: "Montserrat";
+    font-size: calc(var(--card-width) * var(--text-size-offset, 0.2));
+    white-space: nowrap;
+    color: #fff;
+    width: fit-content;
+}
+
+.info .name,
+.info .location {
+    text-transform: uppercase;
+}
+
+.info .location {
+    font-weight: 800;
+}
+
+.info .location {
+    --mg-left: 40px;
+    --text-size-offset: 0.12;
+    font-weight: 600;
+    margin-left: var(--mg-left);
+    margin-bottom: calc(var(--mg-left) / 2);
+    padding-bottom: 0.8rem;
+}
+
+.info .location::before,
+.info .location::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    left: 0%;
+    transform: translate(calc(-1 * var(--mg-left)), -50%);
+}
+
+.info .location::before {
+    top: 50%;
+    width: 20px;
+    height: 5px;
+}
+
+.info .location::after {
+    bottom: 0;
+    width: 60px;
+    height: 2px;
+}
+
+.info .description {
+    --text-size-offset: 0.065;
+    font-weight: 500;
+}
+
+.info.current--info {
+    opacity: 1;
+    display: block;
+}
+
+.info.previous--info,
+.info.next--info {
+    opacity: 0;
+    display: none;
+}
+
+.loading__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    z-index: 200;
+}
+
+.loading__wrapper .loader--text {
+    color: #fff;
+    font-family: "Montserrat";
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+}
+
+.loading__wrapper .loader {
+    position: relative;
+    width: 200px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.loading__wrapper .loader span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: red;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+@media only screen and (min-width: 800px) {
+    :root {
+        --card-width: 300px;
+        --card-height: 200px;
+    }
+}
