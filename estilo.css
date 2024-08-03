@@ -540,6 +540,7 @@ html{
 .contacto .fila{
     display: flex;
 }
+
 .contacto .col{
     width: 50%;
     padding: 10px;
@@ -710,4 +711,40 @@ footer .arriba{
     .contacto .fila .col{
         width: 100%;
     }
+}
+
+.card {
+    width: 330px;
+    height: 620px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+   }
+
+
+#networks{
+    border-radius: 10px;
+    width: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+#network-title{
+    width: 110px;
+    
+}
+
+#linkedin{
+    border-radius: 10px;
+    width: 120px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#image-post{
+   margin-top: 10px;
+   padding: 15px;
+   border-radius: 10px;
 }
