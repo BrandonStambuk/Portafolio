@@ -539,7 +539,7 @@ html{
     color: #ffffff; /* Ajuste para que coincida con el esquema de color dorado */
 }
 .filtro-categorias {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
 }
 .filtro-categorias .btn-filtro {
