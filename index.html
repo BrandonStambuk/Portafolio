@@ -11,6 +11,7 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles/estilo.css">
     <link rel="stylesheet" href="/formulario/styles.css">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <!-- MENU ENCABEZADO -->
@@ -24,11 +25,11 @@
                     <li><a href="#inicio" onclick="seleccionar()">INICIOO</a></li>
                   <!--  <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>-->
                     <li><a href="#portfolio" onclick="seleccionar()">PROYECTOS</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar()">EXPERIENCIAS</a></li>
+                    <li><a href="#experiencias" onclick="seleccionar()">EXPERIENCIAS</a></li>
                     <li><a href="#sobremi" onclick="seleccionar()">CURRICULUM</a></li>
                     <li><a href="#comentarios" onclick="seleccionar()">COMENTARIOS</a></li>
                  <!--    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>-->
-                    <li><a href="#contacto" onclick="seleccionar()">REDES</a></li>
+                    <li><a href="#redes" onclick="seleccionar()">REDES</a></li>
                 </ul>
             </nav>
             <div class="nav-responsive" onclick="mostrarOcultarMenu()">
@@ -318,8 +319,52 @@
         </div>
     </section>    
 
+    <!-- SECCION EXPERIENCIAS -->
+<section id="experiencias" class="experiencias">
+    <div class="contenido-seccion">
+        <h2>Experiencias</h2>
+        <!-- Filtro de Categorías -->
+        <div class="filtro-categorias">
+            <button class="btn-filtro" data-categoria="todos">Todos</button>
+            <button class="btn-filtro" data-categoria="laboral">Laboral</button>
+            <button class="btn-filtro" data-categoria="academico">Académico</button>
+            <button class="btn-filtro" data-categoria="extracurricular">Extracurricular</button>
+            <a href="formularioExperiencias.html" class=" addProject">
+                <i class="fa-solid fa-circle-plus"></i>
+                <p>Agregar Experiencia</p>
+            </a>
+        </div>
+       
+        
+        <div class="fila">
+            <a href="experienciaCard.html" class="item" data-categoria="laboral">
+                <h3>Experiencia de trabajo</h3>
+                <h4>Front Developer</h4>
+                <span class="casa">Nombre de Compañía</span>
+                <span class="fecha">2005 - 2008</span>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+            </a>
+            <a href="experienciaCard.html" class="item" data-categoria="academico">
+                <h3>Experiencia Académica</h3>
+                <h4>Estudiante de Informática</h4>
+                <span class="casa">Nombre de Universidad</span>
+                <span class="fecha">2010 - 2014</span>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+            </a>
+            <a href="experienciaCard.html" class="item" data-categoria="extracurricular">
+                <h3>Actividades Extracurriculares</h3>
+                <h4>Voluntario</h4>
+                <span class="casa">Nombre de Organización</span>
+                <span class="fecha">2015 - 2018</span>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+
     <!-- SECCION CONTACTO -->
-    <section id="contacto" class="contacto">
+    <section id="contactoo" class="contacto">
         <div class="contenido-seccion">
             <h2>CONTACTO</h2>
             <div class="fila">
