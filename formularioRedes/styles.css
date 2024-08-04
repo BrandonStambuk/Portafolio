@@ -236,3 +236,7 @@ select option {
     text-decoration: none;
     cursor: pointer;
 }
+
+.boton_agregarExperiencia{
+    margin-left: 550px;
+}
