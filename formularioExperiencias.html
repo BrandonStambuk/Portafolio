@@ -21,7 +21,6 @@
                     <li><a href="#portfolio" onclick="seleccionar()">EXPERIENCIAS</a></li>
                     <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
                     <li><a href="#curriculum" onclick="seleccionar()">COMENTARIOS</a></li>
-                    <!--    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>-->
                     <li><a href="#contacto" onclick="seleccionar()">REDES</a></li>
                 </ul>
             </nav>
@@ -61,7 +60,6 @@
                     </select>
                     <select id="inicioAnio" name="inicioAnio">
                         <option value="">Año</option>
-                        <!-- Puedes añadir más años según necesites -->
                         <option value="2024">2024</option>
                         <option value="2023">2023</option>
                         <option value="2022">2022</option>
@@ -74,7 +72,6 @@
                         <option value="2015">2015</option>
                         <option value="2014">2014</option>
                         <option value="2013">2013</option>
-                        <!-- Añadir más años aquí -->
                     </select>
                 </div>
                 <div class="contenedordatos">
@@ -96,7 +93,6 @@
                     </select>
                     <select id="finAnio" name="finAnio">
                         <option value="">Año</option>
-                        <!-- Puedes añadir más años según necesites -->
                         <option value="2024">2024</option>
                         <option value="2023">2023</option>
                         <option value="2022">2022</option>
@@ -109,7 +105,6 @@
                         <option value="2015">2015</option>
                         <option value="2014">2014</option>
                         <option value="2013">2013</option>
-                        <!-- Añadir más años aquí -->
                     </select>
                 </div>
                 <div class="contenedordatos">
@@ -155,17 +150,60 @@
                 <div class="submit-container">
                     <input id="boton" type="submit" value="Enviar">
                 </div>
-            </form>
+            </div>
         </div>
-        <script src="subirImagen/main.js"></script>
-        <script src="formulario/esferas.js"></script>
     </main>
-
+    <script src="subirImagen/main.js"></script>
+    <script src="formulario/esferas.js"></script>
     <script>
         const dialog = document.getElementById('login-dialog');
 
         function showLoginDialog() {
             dialog.showModal();
+        }
+
+        document.getElementById('boton').addEventListener('click', function(event) {
+            event.preventDefault(); // Evitar el envío del formulario
+            saveFormData();
+        });
+
+        function saveFormData() {
+            const titulo = document.getElementById('inputxt').value;
+            const descripcion = document.getElementById('descripcion').value;
+            const inicioMes = document.getElementById('inicioMes').value;
+            const inicioAnio = document.getElementById('inicioAnio').value;
+            const finMes = document.getElementById('finMes').value;
+            const finAnio = document.getElementById('finAnio').value;
+            const categoria = document.getElementById('categoria').value;
+            const images = document.getElementById('fileInput').files;
+
+            const imagePromises = Array.from(images).map(file => {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve(reader.result);
+                    reader.onerror = error => reject(error);
+                    reader.readAsDataURL(file);
+                });
+            });
+
+            Promise.all(imagePromises).then(base64Images => {
+                const formData = {
+                    titulo,
+                    descripcion,
+                    inicioMes,
+                    inicioAnio,
+                    finMes,
+                    finAnio,
+                    categoria,
+                    images: base64Images
+                };
+
+                localStorage.setItem('formData', JSON.stringify(formData));
+                alert('Datos guardados en Local Storage');
+            }).catch(error => {
+                console.error('Error al convertir las imágenes a base64:', error);
+                alert('Error al guardar las imágenes.');
+            });
         }
     </script>
 </body>
