@@ -474,7 +474,7 @@ html{
     margin: auto;
 }
 .portfolio h2{
-    font-size: 48px;
+    font-size: 58px;
     font-family: 'Righteous';
     text-align: center;
     padding: 20px 0;
@@ -532,14 +532,21 @@ html{
     margin: auto;
 }
 .contacto h2{
-    font-size: 48px;
+    font-size: 45px;
     font-family: 'Righteous';
-    text-align: center;
-    padding: 20px 0;
+    text-align: left;
+    padding: 10px 0;
+}
+.contacto p{
+    margin-bottom: 30px;
+    color: #98968B;
+    font-size: 20px;
+    text-align: justify;
 }
 .contacto .fila{
     display: flex;
 }
+
 .contacto .col{
     width: 50%;
     padding: 10px;
@@ -589,7 +596,7 @@ html{
     top: 40%;
     background-color: #21201E;
     padding: 20px;
-    max-swidth: 350px;
+    max-width: 350px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -710,4 +717,70 @@ footer .arriba{
     .contacto .fila .col{
         width: 100%;
     }
+}
+
+.card {
+    width: 330px;
+    height: 620px;
+    border-radius: 30px;
+    background: #212121;
+    box-shadow: 15px 15px 30px rgb(25, 25, 25),
+                -15px -15px 30px rgb(60, 60, 60);
+   }
+
+
+#networks{
+    border-radius: 10px;
+    width: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+#network-title{
+    width: 110px;
+    
+}
+
+#linkedin{
+    border-radius: 10px;
+    width: 120px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#image-post{
+   margin-top: 10px;
+   padding: 15px;
+   border-radius: 10px;
+}
+
+
+
+#agregar-red {
+    display: flex;
+    align-items: center;
+    
+}
+
+
+#boton-agregar-red{
+    margin-top: 100px;
+}
+
+
+
+.plus-circle {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fea609;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    margin-right: 10px;
+    font-weight: bold;
+    margin-top: 70px;
+    margin-left: 60px;
 }
