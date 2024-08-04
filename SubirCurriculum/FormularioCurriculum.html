@@ -12,7 +12,7 @@
     <div class="contenedor-header">
         <header>
             <div class="logo">
-                <a href="#">Nick</a>
+                <a href="#">USUARIO</a>
             </div>
             <nav id="nav">
                 <ul>
@@ -37,16 +37,16 @@
                 <div class="fila">
                     <div class="col">
                         <div class="contenedor-text">
-                            <textarea id="inputxt" name="descripcion" id="descripcion" cols="30" rows="5" placeholder="Descripción"></textarea>                            
+                            <textarea class="inputxt" name="descripcion" id="descripcion" cols="30" rows="5" placeholder="Descripción"></textarea>                            
                             <div class="contenedorfecha">
                                 <label for="fecha">Fecha de Nacimiento</label> 
-                                <input id="inputxt" type="date" id="fecha" name="fecha" placeholder="Ingrese Fecha">               
+                                <input class="inputxt" type="date" id="fecha" name="fecha" placeholder="Ingrese Fecha">               
                             </div>
-                            <input id="inputxt" type="number" name="telefono" placeholder="Telefono">                          
-                            <input id="inputxt" type="email" name="email" placeholder="Email">
-                            <input id="inputxt" type="text" name="website" placeholder="Website">
-                            <input id="inputxt" type="text" name="linkedin" placeholder="Linkedin">                
-                            <input id="inputxt" type="text" name="github" placeholder="Github"> 
+                            <input class="inputxt" id="telefono" type="number" name="telefono" placeholder="Telefono">                          
+                            <input class="inputxt" id="email" type="email" name="email" placeholder="Email">
+                            <input class="inputxt" id="website" type="text" name="website" placeholder="Website">
+                            <input class="inputxt" id="linkedin" type="text" name="linkedin" placeholder="Linkedin">                
+                            <input class="inputxt" id="github" type="text" name="github" placeholder="Github"> 
                         </div>   
                     </div>                         
                     <div class="col">
@@ -90,7 +90,7 @@
                             <label class="checkbox-container">
                                 <input type="checkbox" class="checkbox" id="checkbox" name="tecnologia">
                                 <div class="custom-checkbox" id="customCheckbox">
-                                    <i class="fa-solid fa-laptop" id="icon"></i>
+                                    <i class="fa-solid fa-car" id="icon"></i>
                                     <span class="checktext">AUTOS</span> 
                                 </div>
                             </label>
@@ -119,10 +119,25 @@
                     </div>                    
                 </div>
             </div>
-            <input id="boton" type="submit" value="Postear">                
-        </form>
+            
+            <button type="button" id="boton" value="Enviar" onclick="validar()">Postear<input id="boton" type="submit" value="Postear" style="display: none;"></button>                                      
+        </form>  
+        <div class="botonatras">   
+              <a href="../index.html#sobremi" id="boton">
+                <button id="boton">
+                    Volver <i class="fa-solid fa-arrow-left"></i>
+                </button>            
+            </a> 
+        </div>  
         <script src="esferas.js"></script>
-        <script src="FormularioScript.js"></script>
+        <script src="FormularioScript.js"></script>  
+        <script src="validacion.js"></script>  
     </main>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message"> Formulario enviado con exito</p>
+        </div>
+    </div>
 </body>
 </html>

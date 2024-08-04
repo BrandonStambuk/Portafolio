@@ -144,7 +144,7 @@ body{
     color: #fff;
 }
 
-#inputxt{
+.inputxt{
     color: #fff;
     background-color: #98968B;    
     padding: 6px;
@@ -159,7 +159,7 @@ body{
     align-items: center;
 }
 
-#inputxt::placeholder{
+.inputxt::placeholder{
     color: #fff;
     opacity: 0.5;
 }
@@ -177,7 +177,7 @@ body{
     margin: 5px;
     float: left;
 }
-#inputxt[type="date"]{
+.inputxt[type="date"]{
     width: 45%; 
     margin: 5px; 
 }
@@ -209,11 +209,30 @@ body{
     width: 200px;
     height: 40px;
 }
+.botonatras{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+button{
+    background-color: #FEA609;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    width: 200px;
+    height: 40px;
+}
+
+button:hover{
+    background-color: #FFD65A;
+}
 
 #ingreso input[type="submit"]:hover{
     background-color: #FFD65A;
 }
-
 
 .sobremi .contenido-seccion{
     max-width: 1100px;
@@ -330,6 +349,43 @@ body{
     z-index: 1; /* Esferas en una capa inferior */
     opacity: 0; /* Esferas invisibles inicialmente */
     transition: opacity 1s ease, transform 1s ease; /* Transiciones suaves */
+}
+
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    z-index: 1; /* Asegurarse de que esté por encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permitir el desplazamiento si es necesario */
+    background-color: rgb(0,0,0); /* Color de fondo semi-transparente */
+    background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    z-index: 1; /* Asegurarse de que esté por encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permitir el desplazamiento si es necesario */
+    background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+}
+
+.modal-content {
+    background-color: #2D2B29; /* Color de fondo del modal */
+    margin: 15% auto; /* Centrar el modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    max-width: 500px; /* Ancho máximo del modal */
+    color: #ffffff; /* Color del texto en el modal */
+    border-radius: 10px;
 }
 
 /* Esferas visibles */
