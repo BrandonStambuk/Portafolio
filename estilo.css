@@ -549,6 +549,7 @@ html{
     padding: 10px 20px;
     margin: 0 10px;
     cursor: pointer;
+    border-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
 }
 .filtro-categorias .btn-filtro:hover {
@@ -618,6 +619,39 @@ html{
     text-decoration: none; /* Quita el subrayado */
     color: inherit; /* Hereda el color del elemento padre */
 }
+
+/* Carrusel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+}
+.carousel .item {
+    min-width: calc(33.333% - 20px); /* Tres columnas con espacio entre ellas */
+    flex: 0 0 calc(33.333% - 20px); /* Para asegurar que cada item tome el tamaño adecuado */
+}
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.carousel-control.prev {
+    left: 0;
+}
+.carousel-control.next {
+    right: 0;
+}
+
+
 
 /* SECCION CONTACTO */
 .contacto{
@@ -695,7 +729,7 @@ html{
     top: 40%;
     background-color: #21201E;
     padding: 20px;
-    max-swidth: 350px;
+    max-width: 350px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -883,3 +917,43 @@ footer .arriba{
     margin-top: 70px;
     margin-left: 60px;
 }
+
+.filtro-y-agregar {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los filtros y el botón de agregar */
+    align-items: center;
+    margin-bottom: 20px; /* Espacio entre el contenedor de filtros y el contenido */
+}
+
+.filtro-categorias {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones de filtro */
+}
+
+.addProject {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #FEA609; /* Color del texto del botón */
+    border: 2px solid #fea609; /* Bordes del botón */
+    background-color: transparent; /* Sin fondo */
+    padding: 5px 10px; /* Relleno alrededor del botón */
+    border-radius: 10px; /* Bordes redondeados del botón */
+    margin-left: 257px;
+    transition: border-color 0.3s, color 0.3s; /* Transición suave para el hover */
+}
+
+.addProject:hover {
+    color: #fff; /* Color del texto en hover */
+    border-color: #fff; /* Color del borde en hover */
+}
+
+.addProject i {
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+}
+
+.addProject p {
+    margin: 0;
+}
+
+

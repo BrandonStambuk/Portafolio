@@ -34,6 +34,72 @@ function efectoHabilidades(){
     }
 }
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('experienciasCarousel');
+    const formData = JSON.parse(localStorage.getItem('formData'));
+
+    if (formData) {
+        const { titulo, descripcion, inicioMes, inicioAnio, finMes, finAnio, categoria, images } = formData;
+
+        const item = document.createElement('a');
+        item.className = 'item';
+        item.href = 'experienciaCard.html';
+        item.dataset.categoria = categoria;
+
+        item.innerHTML = `
+            <h3>${categoria === 'laboral' ? 'Experiencia Laboral' : categoria === 'academico' ? 'Experiencia Académica' : 'Actividad Extracurricular'}</h3>
+            <h4>${titulo}</h4>
+            <span class="casa">${descripcion}</span>
+            <span class="fecha">${inicioMes}/${inicioAnio} - ${finMes}/${finAnio}</span>
+            <p>${descripcion}</p>
+        `;
+
+        /*if (images && images.length > 0) {
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+            images.forEach(image => {
+                const img = document.createElement('img');
+                img.src = image;
+                img.alt = titulo;
+                imageContainer.appendChild(img);
+            });
+            item.appendChild(imageContainer);
+        }*/
+
+        container.appendChild(item);
+    }
+
+    const items = container.querySelectorAll('.item');
+    if (items.length > 3) {
+        document.querySelector('.carousel-control.prev').style.display = 'block';
+        document.querySelector('.carousel-control.next').style.display = 'block';
+    } else {
+        document.querySelector('.carousel-control.prev').style.display = 'none';
+        document.querySelector('.carousel-control.next').style.display = 'none';
+    }
+    
+});
+
+let currentIndex = 0;
+
+function moveCarousel(direction) {
+    const container = document.getElementById('experienciasCarousel');
+    const items = container.querySelectorAll('.item');
+    const totalItems = items.length;
+    const itemsPerSlide = 3;
+
+    currentIndex += direction;
+    if (currentIndex < 0) {
+        currentIndex = totalItems - itemsPerSlide;
+    } else if (currentIndex > totalItems - itemsPerSlide) {
+        currentIndex = 0;
+    }
+
+    const offset = -currentIndex * (100 / itemsPerSlide);
+    container.style.transform = `translateX(${offset}%)`;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const filterButtons = document.querySelectorAll('.btn-filtro');
     const items = document.querySelectorAll('.item');
@@ -52,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-
 
 
 //detecto el scrolling para aplicar la animacion de la barra de habilidades
