@@ -1,3 +1,23 @@
+let bb = false;
+document.addEventListener('DOMContentLoaded', function() {
+    const comentariosGrilla = document.querySelector('.comentarios-grilla');
+
+    // Verificar si hay un nuevo comentario en localStorage
+    const nuevoComentario = localStorage.getItem('nuevoComentario');
+    if (nuevoComentario) {
+        var cOculto3 = document.getElementById('c-oculto-3');
+        // Insertar la nueva tarjeta en la grilla de comentarios
+        comentariosGrilla.insertAdjacentHTML('afterbegin', nuevoComentario);
+        // Limpiar el localStorage
+        localStorage.removeItem('nuevoComentario');
+        if(cOculto3) {
+            cOculto3.style.display = 'none';
+            bb = true;
+        }   
+    }
+});
+
+
 let menuVisible = false;
 //Función que oculta o muestra el menu
 function mostrarOcultarMenu(){
@@ -124,3 +144,21 @@ document.addEventListener('DOMContentLoaded', function () {
 window.onscroll = function(){
     efectoHabilidades();
 } 
+
+function mostrarMasOMenosComentarios() {
+    var botonMasOMenosComentarios = document.getElementById('boton-mostrar-comentarios');
+    var cOculto1 = document.getElementById('c-oculto-1');
+    var cOculto2 = document.getElementById('c-oculto-2');
+    var cOculto3 = document.getElementById('c-oculto-3');
+    if (cOculto1.style.display === 'none') {
+        cOculto1.style.display = '';
+        cOculto2.style.display = '';
+        if(bb) cOculto3.style.display = '';
+        botonMasOMenosComentarios.innerHTML = '<i class="fas fa-chevron-up"></i> Ocultar comentarios';
+    } else {
+        cOculto1.style.display = 'none';
+        cOculto2.style.display = 'none';
+        if(bb) cOculto3.style.display = 'none';
+        botonMasOMenosComentarios.innerHTML = '<i class="fas fa-chevron-down"></i> Más comentarios';
+    }
+}

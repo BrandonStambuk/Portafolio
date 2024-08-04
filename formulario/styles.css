@@ -36,6 +36,7 @@ body{
 #menu ul li a:hover{
     color: #FEA609;
 }
+
 .container{
     position: relative;
     width: 70%;
@@ -72,6 +73,48 @@ body{
     width: 500px; /* Ajusta el ancho del label según sea necesario */
 }
 
+
+#ingreso-c{
+    background-color: #21201E;
+    color: #fff;
+    padding: 10px;
+}
+
+#ingreso-c input{
+    color: #fff;
+    background-color: #98968B;    
+    padding: 6px;
+    border: none;    
+    margin: 5px 0px;
+    border-radius: 2px;
+    float: left;
+    /*cambiar si dos inputs comparten la misma linea*/
+    width: 100%;
+    font-size: 16px;
+}
+
+#ingreso-c input[type="submit"]{
+    background-color: #FEA609;
+    color: #fff;
+    border: none;
+    padding: 5px 0px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+}
+
+#ingreso-c textarea{
+    color: #fff;
+    background-color: #98968B;    
+    padding: 6px;
+    border: none;    
+    margin: 5px 0px;
+    border-radius: 2px;
+    float: left;
+    width: 100%;
+}
+
 #contenedordatos{   
     color: #fff;
     padding: 10px;
@@ -79,6 +122,30 @@ body{
     margin-top: 10%;
     text-align: center;
     align-items: center;    
+}
+
+#comentario {
+    color: #fff;
+    background-color: #98968B;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px 0;
+    min-height: 100px; /* Altura mínima del campo de entrada */
+    overflow: hidden; /* Oculta el desbordamiento del contenido */
+    text-align: left; /* Alinea el texto a la izquierda */
+    resize: vertical; /* Permite redimensionar el textarea verticalmente */
+    font-size: 16px; /* Tamaño del texto dentro del textarea */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+    display: block; /* Asegura que el campo ocupe el ancho completo */
+}
+
+#comentario::placeholder,
+#nombre-c::placeholder,
+#email-c::placeholder{
+    font-size: 16px; 
+    color: #fff; 
+    opacity: 0.8; 
 }
 
 #ingreso input, select, textarea{
@@ -229,4 +296,75 @@ textarea::placeholder {
     opacity: 1; /* Esferas visibles */
 }
 
+/* Estilos del modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #21201E;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-icon-incorrect {
+    width: 45px;
+    height: 45px;
+    background-color: #C92D2D;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.modal-icon-correct {
+    width: 45px;
+    height: 45px;
+    background-color: #409323;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.modal-message {
+    font-size: 18px;
+    color: #fff;
+    padding: 5px;
+    border: 5px;
+}
 
