@@ -1,0 +1,242 @@
+body{
+    background-color: #21201E;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#cabecera{
+    color: #fff;
+}
+#titulocab{
+    font-size: 1.5em;
+    margin: 0;
+    padding: 10px;
+    float: left;
+}
+#menu{    
+    background-color: #21201E;
+    color: #fff;
+    padding: 10px;
+    float: right;
+}
+#menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#menu ul li{
+    display: inline;
+    margin-right: 10px;
+}
+#menu ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+#menu ul li a:hover{
+    color: #FEA609;
+}
+.container{
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#titulo{
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 10%;
+    text-align: center;
+}
+
+#ingreso{
+    background-color: #21201E;
+    color: #fff;
+    padding: 10px;
+}
+#contenedordatos{   
+    
+    padding: 10px;
+    margin: 10px;
+    margin-top: 10%;
+    text-align: center;
+    align-items: center;    
+}
+
+#ingreso input{
+    
+    background-color: #98968B;    
+    padding: 6px;
+    border: none;    
+    margin: 5px;
+    border-radius: 2px;
+    float: left;
+    /*cambiar si dos inputs comparten la misma linea*/
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+}
+
+#ingreso input::placeholder{
+    color: #fff;
+}
+
+#ingreso input[type="date"]{
+    width: 45%; 
+    margin: 5px; 
+}
+
+.contenedorfile > input{
+    display: none;
+}
+
+.contenedorfile img{
+    width: 30px;
+    cursor: pointer;
+}
+
+#ingreso input[type="submit"]{
+    background-color: #FEA609;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    margin-left: 100px;
+    margin-top: 100px;
+    
+}
+
+.sphere1 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fea40929;
+    z-index: 1; /* Esferas en una capa inferior */
+    opacity: 0; /* Esferas invisibles inicialmente */
+    transition: opacity 1s ease, transform 1s ease; /* Transiciones suaves */
+}
+
+.sphere2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f4f4f435;
+    z-index: 1; /* Esferas en una capa inferior */
+    opacity: 0; /* Esferas invisibles inicialmente */
+    transition: opacity 1s ease, transform 1s ease; /* Transiciones suaves */
+}
+
+.sphere.visible {
+    opacity: 1; /* Esferas visibles */
+}
+
+select {
+    color: #fff;
+    background-color: #98968B;
+    padding: 6px;
+    border: none;
+    margin: 5px;
+    border-radius: 2px;
+    width: 90%;
+    float: left;
+    height: 40px;
+    /* Estilos adicionales para que se vea igual que los inputs */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 10px;
+}
+select option {
+    color: #000;
+    background-color: #fff;
+}
+
+#ingreso input[type="submit"], #atras {
+    background-color: #FEA609;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    margin: 5px;
+    margin-top: 100px;
+    display:flexbox;
+    margin-left: 300px;
+}
+#ingreso input[type="submit"], #conectar {
+    background-color: #FEA609;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    margin: 5px;
+    margin-top: 100px;
+    display:flexbox;
+    margin-left: 300px;
+}
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    z-index: 1; /* Asegurarse de que esté por encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permitir el desplazamiento si es necesario */
+    background-color: rgb(0,0,0); /* Color de fondo semi-transparente */
+    background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    z-index: 1; /* Asegurarse de que esté por encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permitir el desplazamiento si es necesario */
+    background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+}
+
+.modal-content {
+    background-color: #2D2B29; /* Color de fondo del modal */
+    margin: 15% auto; /* Centrar el modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    max-width: 500px; /* Ancho máximo del modal */
+    color: #ffffff; /* Color del texto en el modal */
+    border-radius: 10px;
+}
+
+.close {
+    color: #ffffff; /* Color del texto del botón de cerrar */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #cccccc; /* Color del texto del botón de cerrar al pasar el mouse */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton_agregarExperiencia{
+    margin-left: 550px;
+}

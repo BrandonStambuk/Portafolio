@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.container');
-    const numberOfSpheres = 10;
+    const container = document.querySelector('.contenedor-text');
+    const numberOfSpheres = 6;
     const spheres = ['sphere1', 'sphere2'];
 
     for (let i = 0; i < numberOfSpheres; i++) {
@@ -24,13 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
             sphere.classList.add('visible');
         }, 100);
     }
-
-
-    // Manejar el click en el icono de la cámara
-    /*const camaraIcon = document.getElementById('camaraIcon');
-    camaraIcon.addEventListener('click', (e) => {
-        e.preventDefault();
-        mostrarPopup();
-    });*/
 });
-

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../estilo.css">
+
+</head>
+<body>
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">USUARIO</a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="/index.html" ">INICIO</a></li>
+                   
+                    <li><a href="/index.html" onclick="seleccionar()">PROYECTOS</a></li>
+                    <li><a href="/index.html#experiencias" onclick="seleccionar()">EXPERIENCIAS</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">COMENTARIOS</a></li>
+                 <!--    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>-->
+                    <li><a href="/index.html#redes" onclick="seleccionar()">REDES</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+    <main>        
+        <div class="container">
+            <h1 id="titulo">Agregar red social</h1>
+            <div id="ingreso">
+                <div class="contenedordatos">
+                <input  type="text" id="nombreUsuario" name="nombreUsuario" placeholder="Nombre de usuario">
+                </div>
+                <div class="contenedordatos">
+                <input type="password" id="contra" name="contra" placeholder="Contraseña">
+                </div>
+                <div class="contenedordatos">
+                    <select name="redes-sociales" id="redes-sociales">
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="github">GitHub</option>
+                        <option value="twitter">Twitter</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="instagram">Instagram</option>
+                    </select>
+                </div>
+                
+
+                <button type="button" id="conectar" value="Enviar" onclick="validarFormulario()">Conectar</button>
+            </form>
+        </div>
+        <script src="esferas.js"></script>
+        <script src="validacion.js"></script>
+    </main>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message"> Red social añadida correctamente!</p>
+        </div>
+    </div>
+</body>
+</html>

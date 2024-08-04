@@ -24,13 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
             sphere.classList.add('visible');
         }, 100);
     }
-
-
-    // Manejar el click en el icono de la cámara
-    /*const camaraIcon = document.getElementById('camaraIcon');
-    camaraIcon.addEventListener('click', (e) => {
-        e.preventDefault();
-        mostrarPopup();
-    });*/
 });
-
