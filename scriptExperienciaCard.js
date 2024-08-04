@@ -252,4 +252,70 @@ const waitForImages = () => {
 	});
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('experienciasContainer');
+    const formData = JSON.parse(localStorage.getItem('formData')) || [];
+
+    formData.forEach(data => {
+        const { titulo, descripcion, inicioMes, inicioAnio, finMes, finAnio, categoria, images } = data;
+
+        const item = document.createElement('a');
+        item.className = 'item';
+        item.href = 'experienciaCard.html';
+        item.dataset.categoria = categoria;
+
+        item.innerHTML = `
+            <h3>${titulo}</h3>
+            <h4>${categoria === 'laboral' ? 'Experiencia Laboral' : categoria === 'academico' ? 'Experiencia Académica' : 'Actividad Extracurricular'}</h4>
+            <span class="casa">${descripcion}</span>
+            <span class="fecha">${inicioMes}/${inicioAnio} - ${finMes}/${finAnio}</span>
+            <p>${descripcion}</p>
+        `;
+
+        if (images && images.length > 0) {
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+            images.forEach(image => {
+                const img = document.createElement('img');
+                img.src = image;
+                img.alt = titulo;
+                imageContainer.appendChild(img);
+            });
+            item.appendChild(imageContainer);
+        }
+
+        container.appendChild(item);
+    });
+
+    // Si se han añadido más de 3 tarjetas, se habilitan los controles del carrusel
+    const items = container.querySelectorAll('.item');
+    if (items.length > 3) {
+        document.querySelector('.carousel-control.prev').style.display = 'block';
+        document.querySelector('.carousel-control.next').style.display = 'block';
+    } else {
+        document.querySelector('.carousel-control.prev').style.display = 'none';
+        document.querySelector('.carousel-control.next').style.display = 'none';
+    }
+
+    // Filtro de Categorías
+    const filterButtons = document.querySelectorAll('.btn-filtro');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const categoria = this.dataset.categoria;
+            filterItems(categoria);
+        });
+    });
+
+    function filterItems(categoria) {
+        const items = container.querySelectorAll('.item');
+        items.forEach(item => {
+            if (categoria === 'todos' || item.dataset.categoria === categoria) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+});
+
 waitForImages();

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">USUARIO</a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIOO</a></li>
+                    <!--  <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>-->
+                    <li><a href="#portfolio" onclick="seleccionar()">PROYECTOS</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">EXPERIENCIAS</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#comentarios" onclick="seleccionar()">COMENTARIOS</a></li>
+                    <!--    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>-->
+                    <li><a href="#contacto" onclick="seleccionar()">REDES</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+    <div>
+        <main>
+            <div class="container">
+                <h1 id="titulo">NUEVO COMENTARIO</h1>
+                <form id="formulario-comentario">
+                    <div id="ingreso-c">
+                        <div class="contenedordatos">
+                            <input type="text" id="nombre-c" name="nombre" placeholder="Nombre">
+                        </div>
+                        <div class="contenedordatos">
+                            <input type="input" id="email-c" name="email" placeholder="Correo">
+                        </div>
+                        <div class="contenedordatos-comentario">
+                            <textarea id="comentario" name="comentario" placeholder="Comentario"></textarea>
+                        </div>
+                        <input id="boton" type="submit" value="Enviar">
+                </form>
+            </div>
+            <!-- Modal -->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-message"></div>
+                    <div id="icon-color" class="modal-icon-incorrect close">
+                        <i id="icon-modal" class="fas fa-times"></i>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </main>
+    <script src="esferas.js"></script>
+    <script src="comentarios.js"></script>
+    </div>
+</body>
+
+</html>

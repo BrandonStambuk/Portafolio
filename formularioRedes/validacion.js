@@ -83,3 +83,5 @@ function agregarRedSocial() {
     storedRedes.push(newRed);
     localStorage.setItem('redes', JSON.stringify(storedRedes));
 }
+let slideIndex = 0;
+

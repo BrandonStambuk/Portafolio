@@ -77,6 +77,7 @@ body{
     width: 90%;
     height: 40px;
     border-radius: 10px;
+    margin-left: 50px;
 }
 
 #ingreso input::placeholder{
@@ -152,6 +153,7 @@ select {
     -moz-appearance: none;
     appearance: none;
     border-radius: 10px;
+    margin-left: 50px;
 }
 select option {
     color: #000;
@@ -169,7 +171,7 @@ select option {
     height: 40px;
     margin: 5px;
     margin-top: 100px;
-    display:flexbox;
+    
     margin-left: 300px;
 }
 #ingreso input[type="submit"], #conectar {
@@ -183,8 +185,8 @@ select option {
     height: 40px;
     margin: 5px;
     margin-top: 100px;
-    display:flexbox;
-    margin-left: 300px;
+   
+    margin-left: 370px;
 }
 .modal {
     display: none; /* Ocultar el modal por defecto */
@@ -240,3 +242,4 @@ select option {
 .boton_agregarExperiencia{
     margin-left: 550px;
 }
+

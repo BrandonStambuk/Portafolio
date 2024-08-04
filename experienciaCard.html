@@ -6,24 +6,50 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet'>
     <link rel="stylesheet" href="./estiloExperienciaCard.css">
+    <link rel="stylesheet" href="./estilo2.css">
 </head>
 <body>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">USUARIO</a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="/index.html" ">INICIO</a></li>
+                   
+                    <li><a href="/index.html" onclick="seleccionar()">PROYECTOS</a></li>
+                    <li><a href="/index.html#experiencias" onclick="seleccionar()">EXPERIENCIAS</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">COMENTARIOS</a></li>
+                 <!--    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>-->
+                    <li><a href="/index.html#redes" onclick="seleccionar()">REDES</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
 
     <!-- SECCION EXPERIENCIAS -->
     <section id="experiencias" class="experiencias">
+        <main>
         <div class="contenido-seccion">
             <div class="fila">
                 <a href="experienciaCard.html" class="item" data-categoria="laboral">
-                    <h3>Experiencia de trabajo</h3>
+                    <h3>Experiencia Laboral</h3>
                     <h4>Front Developer</h4>
-                    <span class="casa">Nombre de Compañía</span>
-                    <span class="fecha">2005 - 2008</span>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+                    <span class="casa">Google</span>
+                    <span class="fecha">abril/2015 - junio/2016</span>
+                    <p>Como desarrollador de software en Google, he liderado el diseño e implementación de soluciones innovadoras para el sistema de búsqueda, mejorando la velocidad y precisión del motor de búsqueda en un 20%. He trabajado en equipos multidisciplinarios para desarrollar y mantener aplicaciones web de alto rendimiento, garantizando la escalabilidad y la optimización del código. Mi rol también incluye la mentoría de desarrolladores junior y la colaboración con equipos de UX/UI para crear interfaces intuitivas. He participado activamente en la revisión de código, estableciendo mejores prácticas y asegurando el cumplimiento de los estándares de calidad de Google.</p>
                 </a>
             </div>
         </div>
+        <script src="formulario/esferas.js"></script>
+        </main>
     </section>
 
     <div class="app">
@@ -39,19 +65,19 @@
             <div class="cards__wrapper">
                 <div class="card current--card">
                     <div class="card__image">
-                        <img src="img/ImagenHelp.webp" alt="" />
+                        <img src="img/ImagenGoogle.png" alt="" />
                     </div>
                 </div>
 
                 <div class="card next--card">
                     <div class="card__image">
-                        <img src="img/ImagenHelp.webp" alt="" />
+                        <img src="img/Imgen2Google.jpg" alt="" />
                     </div>
                 </div>
 
                 <div class="card previous--card">
                     <div class="card__image">
-                        <img src="img/ImagenHelp.webp" alt="" />
+                        <img src="img/Imagen3Google.webp" alt="" />
                     </div>
                 </div>
             </div>
@@ -99,5 +125,6 @@
     <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>
     <script src="./scriptExperienciaCard.js"></script>
+    
 </body>
 </html>
