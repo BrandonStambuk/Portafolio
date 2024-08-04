@@ -77,7 +77,9 @@ body{
 #ingreso-c{
     background-color: #21201E;
     color: #fff;
-    padding: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 #ingreso-c input{
@@ -122,6 +124,34 @@ body{
     margin-top: 10%;
     text-align: center;
     align-items: center;    
+}
+
+
+.botones-form-c {
+    display: flex; /* Separar los botones */
+    margin-top: 10px;
+    gap: 1rem;
+    justify-content: center;
+}
+#boton-cancelar,
+#boton-aceptar {
+    background-color: #FEA609;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border  0.2s ease;
+}
+
+#boton-aceptar:hover
+#boton-cancelar:hover {
+    background-color: #21201E;
+    border: #fff solid;
+}   
+
+#boton-cancelar:active,
+#boton-aceptar:active {
+    background-color: #a94442; /* Rojo aún más oscuro para cancelar */
+    transform: scale(0.95); /* Reducir el tamaño del botón ligeramente al hacer clic */
 }
 
 #comentario {

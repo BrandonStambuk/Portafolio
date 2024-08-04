@@ -3,6 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     formulario.addEventListener('submit', function(event) {
         event.preventDefault();
+        const botonPresionado = event.submitter.value;
+
+        if (botonPresionado === 'Cancelar') {
+            formulario.reset(); // Limpiar el formulario
+            window.location.href = '../index.html#comentarios';
+            return;
+        }
+        
         const nombre = formulario.nombre.value.trim();
         const email = formulario.email.value.trim();
         const comentario = formulario.comentario.value.trim();
