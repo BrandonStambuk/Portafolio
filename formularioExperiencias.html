@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -15,13 +16,12 @@
             </div>
             <nav id="menu">
                 <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">INICIOO</a></li>
-                   
+                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
                     <li><a href="#portfolio" onclick="seleccionar()">PROYECTOS</a></li>
                     <li><a href="#portfolio" onclick="seleccionar()">EXPERIENCIAS</a></li>
                     <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
                     <li><a href="#curriculum" onclick="seleccionar()">COMENTARIOS</a></li>
-                 <!--    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>-->
+                    <!--    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>-->
                     <li><a href="#contacto" onclick="seleccionar()">REDES</a></li>
                 </ul>
             </nav>
@@ -35,29 +35,106 @@
             <h1 id="titulo">NUEVA EXPERIENCIA</h1>
             <div id="ingreso">
                 <div class="contenedordatos">
-                <input id="inputxt" type="text" id="nombre" name="nombre" placeholder="Nombre">
+                    <label for="nombre">TITULO:</label>
+                    <input id="inputxt" type="text" id="nombre" name="nombre" placeholder="Título">
                 </div>
                 <div class="contenedordatos">
-                <input id="inputxt" type="text" id="apellido" name="apellido" placeholder="Apellido">
+                    <label for="nombre">DESCRIPCION:</label>
+                    <textarea id="descripcion" id="nombre" name="descripcion" placeholder="Comentario"></textarea>
                 </div>
                 <div class="contenedordatos">
-                <input id="inputxt" type="email" id="email" name="email" placeholder="Email">
+                    <label for="inicioMes">FECHA DE INICIO:</label>
+                    <select id="inicioMes" name="inicioMes">
+                        <option value="">Mes</option>
+                        <option value="01">Enero</option>
+                        <option value="02">Febrero</option>
+                        <option value="03">Marzo</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Mayo</option>
+                        <option value="06">Junio</option>
+                        <option value="07">Julio</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+                    <select id="inicioAnio" name="inicioAnio">
+                        <option value="">Año</option>
+                        <!-- Puedes añadir más años según necesites -->
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <!-- Añadir más años aquí -->
+                    </select>
                 </div>
                 <div class="contenedordatos">
-                <input id="texto" type="date" id="fecha" name="fecha" placeholder="Ingrese Fecha">
-                <input id="texto" type="date" id="fecha" name="fecha" placeholder="Ingrese Fecha">
+                    <label for="finMes">FECHA DE FIN:</label>
+                    <select id="finMes" name="finMes">
+                        <option value="">Mes</option>
+                        <option value="01">Enero</option>
+                        <option value="02">Febrero</option>
+                        <option value="03">Marzo</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Mayo</option>
+                        <option value="06">Junio</option>
+                        <option value="07">Julio</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+                    <select id="finAnio" name="finAnio">
+                        <option value="">Año</option>
+                        <!-- Puedes añadir más años según necesites -->
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <!-- Añadir más años aquí -->
+                    </select>
                 </div>
-                <button onclick = showLoginDialog()>Subir Imagen</button>
-                <dialog id = "login-dialog">
+                <div class="contenedordatos">
+                    <label for="nombre">CATEGORIA:</label>
+                    <select id="categoria" name="categoria">
+                        <option value="">Selecciona una categoría</option>
+                        <option value="01">Laboral</option>
+                        <option value="02">Académico</option>
+                        <option value="03">Extracurricular</option>
+                    </select>
+                </div>
+                <div class="contenedorfile">
+                    <label for="archivo">IMAGEN:</label>
+                    <label for="archivo" onclick="showLoginDialog()">
+                        <img id="camaraIcon" src="formulario/imagen.png" alt="Click aquí para subir tu foto" title="Click aquí para subir tu foto">
+                    </label>
+                </div>                
+                <dialog id="login-dialog">
                     <div class="container">
                         <form class="file-form" id="dropSection">
                             <input id="fileInput" type="file" multiple accept="image/*" onchange="app.actions.handleFiles(this.files)">
                             <label class="drop-content" for="fileInput">
                                 Arrastra tus imágenes aquí o haz click y selecciona
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none" viewBox="0 0 24 20"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none" viewBox="0 0 24 20" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                                 </svg>
                             </label>
                         </form>
@@ -70,19 +147,14 @@
                                 <button id="agregarBtn" onclick="app.actions.agregar()">Agregar</button>
                             </div>
                             <div>
-                                <button id="cancelBtn" onclick="app.actions.cancel()">Cancel</button>
+                                <button id="cancelBtn" onclick="app.actions.cancel()">Cancelar</button>
                             </div>
                         </div>
-                        
                     </div>
-                    </div>
-
                 </dialog>
-                <div class="contenedorfile">
-                    <label for="archivo"><img id = "camaraIcon" src="formulario/imagen.png" alt ="Click aquí para subir tu foto" title ="Click aquí para subir tu foto"></label>
-                    <input id="archivo" type="file" id="foto" name="foto" placeholder="Foto">
+                <div class="submit-container">
+                    <input id="boton" type="submit" value="Enviar">
                 </div>
-                <input id="boton" type="submit" value="Enviar">
             </form>
         </div>
         <script src="subirImagen/main.js"></script>
@@ -95,7 +167,6 @@
         function showLoginDialog() {
             dialog.showModal();
         }
-
     </script>
 </body>
 </html>

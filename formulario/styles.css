@@ -51,11 +51,27 @@ body{
     text-align: center;
 }
 
+
 #ingreso{
     background-color: #21201E;
     color: #fff;
     padding: 10px;
+    max-width: 800px;
+    margin: auto;
 }
+
+.contenedorFile{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 100px;
+}
+
+.contenedorfile label {
+    margin: 0;
+    width: 500px; /* Ajusta el ancho del label según sea necesario */
+}
+
 #contenedordatos{   
     color: #fff;
     padding: 10px;
@@ -65,7 +81,7 @@ body{
     align-items: center;    
 }
 
-#ingreso input{
+#ingreso input, select, textarea{
     color: #fff;
     background-color: #98968B;    
     padding: 6px;
@@ -76,6 +92,49 @@ body{
     /*cambiar si dos inputs comparten la misma linea*/
     width: 100%;
 }
+
+.contenedordatos {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contenedordatos label {
+    min-width: 160px;
+}
+
+.contenedordatos input {
+    flex: 2;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.contenedordatos textarea {
+    width: calc(100% - 10px); /* Para compensar el margen derecho */
+}
+
+.contenedordatos select{
+    flex: 1;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+#camaraIcon {
+    width: 30px; /* Ajusta el tamaño del icono según sea necesario */
+    height: auto;
+    cursor: pointer;
+}
+
+textarea::placeholder {
+    color: #fff; /* Color del placeholder */
+    opacity: 1; /* Para que el color se vea correctamente en todos los navegadores */
+}
+
+.contenedordatos textarea {
+    height: 100px; /* Ajusta la altura del textarea según necesites */
+    resize: vertical; /* Permite al usuario ajustar la altura verticalmente */
+}
+
 
 #ingreso input::placeholder{
     color: #fff;
@@ -95,7 +154,7 @@ body{
     cursor: pointer;
 }
 
-#ingreso input[type="submit"]{
+#ingreso input[type="submit"] {
     background-color: #FEA609;
     color: #fff;
     border: none;
@@ -104,7 +163,45 @@ body{
     border-radius: 5px;
     width: 200px;
     height: 40px;
+    display: block; /* Asegúrate de que el botón sea un bloque para alinear a la derecha */
+    margin-left: auto; /* Empuja el botón hacia el extremo derecho */
+    margin-top: 20px; /* Espacio superior opcional para separar del contenido */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
 }
+
+#ingreso input[type="submit"]:hover {
+    /*background-color: #F5B900;*/ /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de agrandamiento suave */
+}
+
+
+.submit-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea el botón a la derecha */
+    text-align: right;
+    margin-top: 20px; /* Ajusta el margen según sea necesario */
+}
+
+#boton {
+    background-color: #FEA609;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#boton:hover {
+    background-color: #f39c12; /* Un amarillo más oscuro para el hover */
+}
+
+#boton:active {
+    transform: scale(0.95);
+}
+
 
 .sphere1 {
     position: absolute;
