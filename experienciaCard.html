@@ -6,11 +6,37 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet'>
     <link rel="stylesheet" href="./estiloExperienciaCard.css">
+    <link rel="stylesheet" href="./estilo2.css">
 </head>
 <body>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">USUARIO</a>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIOO</a></li>
+                  <!--  <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>-->
+                    <li><a href="#portfolio" onclick="seleccionar()">PROYECTOS</a></li>
+                    <li><a href="#experiencias" onclick="seleccionar()">EXPERIENCIAS</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">COMENTARIOS</a></li>
+                 <!--    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>-->
+                    <li><a href="#contacto" onclick="seleccionar()">REDES</a></li>
+                </ul>
+            </nav>
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
 
     <!-- SECCION EXPERIENCIAS -->
     <section id="experiencias" class="experiencias">
+        <main>
         <div class="contenido-seccion">
             <div class="fila">
                 <a href="experienciaCard.html" class="item" data-categoria="laboral">
@@ -24,6 +50,8 @@
                 </a>
             </div>
         </div>
+        <script src="formulario/esferas.js"></script>
+        </main>
     </section>
 
     <div class="app">
@@ -99,5 +127,6 @@
     <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>
     <script src="./scriptExperienciaCard.js"></script>
+    
 </body>
 </html>

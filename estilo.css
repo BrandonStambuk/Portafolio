@@ -549,6 +549,7 @@ html{
     padding: 10px 20px;
     margin: 0 10px;
     cursor: pointer;
+    border-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
 }
 .filtro-categorias .btn-filtro:hover {
@@ -618,6 +619,39 @@ html{
     text-decoration: none; /* Quita el subrayado */
     color: inherit; /* Hereda el color del elemento padre */
 }
+
+/* Carrusel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+}
+.carousel .item {
+    min-width: calc(33.333% - 20px); /* Tres columnas con espacio entre ellas */
+    flex: 0 0 calc(33.333% - 20px); /* Para asegurar que cada item tome el tamaño adecuado */
+}
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.carousel-control.prev {
+    left: 0;
+}
+.carousel-control.next {
+    right: 0;
+}
+
+
 
 /* SECCION CONTACTO */
 .contacto{
@@ -904,8 +938,8 @@ footer .arriba{
     border: 2px solid #fea609; /* Bordes del botón */
     background-color: transparent; /* Sin fondo */
     padding: 5px 10px; /* Relleno alrededor del botón */
-    border-radius: 5px; /* Bordes redondeados del botón */
-    margin-left: 50px;
+    border-radius: 10px; /* Bordes redondeados del botón */
+    margin-left: 257px;
     transition: border-color 0.3s, color 0.3s; /* Transición suave para el hover */
 }
 

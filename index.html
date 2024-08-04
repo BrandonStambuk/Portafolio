@@ -209,39 +209,44 @@
             <button class="btn-filtro" data-categoria="laboral">Laboral</button>
             <button class="btn-filtro" data-categoria="academico">Académico</button>
             <button class="btn-filtro" data-categoria="extracurricular">Extracurricular</button>
-            <a href="formularioExperiencias.html" class=" addProject">
+            <a href="formularioExperiencias.html" class="addProject">
                 <i class="fa-solid fa-circle-plus"></i>
                 <p>Agregar Experiencia</p>
             </a>
         </div>
-       
-        
+
         <div class="fila">
-            <a href="experienciaCard.html" class="item" data-categoria="laboral">
-                <h3>Experiencia de trabajo</h3>
-                <h4>Front Developer</h4>
-                <span class="casa">Nombre de Compañía</span>
-                <span class="fecha">2005 - 2008</span>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
-            </a>
-            <a href="experienciaCard.html" class="item" data-categoria="academico">
-                <h3>Experiencia Académica</h3>
-                <h4>Estudiante de Informática</h4>
-                <span class="casa">Nombre de Universidad</span>
-                <span class="fecha">2010 - 2014</span>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
-            </a>
-            <a href="experienciaCard.html" class="item" data-categoria="extracurricular">
-                <h3>Actividades Extracurriculares</h3>
-                <h4>Voluntario</h4>
-                <span class="casa">Nombre de Organización</span>
-                <span class="fecha">2015 - 2018</span>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
-            </a>
+        <div class="carousel-container">
+            <div class="carousel" id="experienciasCarousel">
+                <a href="experienciaCard.html" class="item" data-categoria="laboral">
+                    <h3>Experiencia de trabajo</h3>
+                    <h4>Front Developer</h4>
+                    <span class="casa">Nombre de Compañía</span>
+                    <span class="fecha">2005 - 2008</span>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+                </a>
+                <a href="experienciaCard.html" class="item" data-categoria="academico">
+                    <h3>Experiencia Académica</h3>
+                    <h4>Estudiante de Informática</h4>
+                    <span class="casa">Nombre de Universidad</span>
+                    <span class="fecha">2010 - 2014</span>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+                </a>
+                <a href="experienciaCard.html" class="item" data-categoria="extracurricular">
+                    <h3>Actividades Extracurriculares</h3>
+                    <h4>Voluntario</h4>
+                    <span class="casa">Nombre de Organización</span>
+                    <span class="fecha">2015 - 2018</span>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?</p>
+                </a>
+                <!-- Las nuevas experiencias se agregarán aquí -->
+            </div>
+            <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
         </div>
     </div>
 </section>
-
 
     <!-- SECCION CONTACTO -->
     <section id="contactoo" class="contacto">
