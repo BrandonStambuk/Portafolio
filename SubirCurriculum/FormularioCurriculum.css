@@ -150,7 +150,7 @@ body{
     padding: 6px;
     border: none;    
     margin: 5px;
-    border-radius: 2px;
+    border-radius: 5px;
     float: left;
     /*cambiar si dos inputs comparten la misma linea*/
     width: 100%;
@@ -165,21 +165,26 @@ body{
 }
 
 .contenedorfecha{
-    margin: 5px;
     float: left;
-    width: 100%;
-    align-items: center;
+    width: 86%;
+    height: 26px;
+    background-color: #98968B;
+    border-radius: 5px;
+    margin: 5px;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 .contenedorfecha label{
     color: #fff;
+    width: 70%;
     margin: 5px;
-    float: left;
+    float: left;    
 }
 .inputxt[type="date"]{
-    width: 45%; 
-    margin: 5px; 
+    width: 30%; 
+    margin: 5px;
+    float: right; 
+    height: 26px;
 }
 
 .contenedorfile > input{

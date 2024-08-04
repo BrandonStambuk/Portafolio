@@ -7,15 +7,23 @@ function validar(){
     const website = document.getElementById("website").value;
     const linkedin = document.getElementById("linkedin").value;
     const github = document.getElementById("github").value;   
-    
-    if(!descripcion || !fecha || !telefono || !email || !website || !linkedin || !github){
-        mostrarModal("Por favor complete todos los campos");
+
+    if(isNaN(telefono)){
+        mostrarModal("El campo telefono debe ser numerico");
         return;
     }else{
-        mostrarModal("Formulario enviado con exito");
-        return;
-    }    
+        if(!descripcion || !fecha || !telefono || !email || !website || !linkedin || !github){
+            mostrarModal("Por favor complete todos los campos");
+            return;
+        }else{
+            mostrarModal("Formulario enviado con exito");
+            return;
+        }    
+    }
 }
+
+
+
 
 // Función para mostrar el modal
 function mostrarModal(mensaje) {
@@ -30,7 +38,7 @@ function mostrarModal(mensaje) {
     span.onclick = function() {
         modal.style.display = 'none';
         if (mensaje === 'Formulario enviado con exito') {
-            agregarRedSocial();
+            cambiarDatos();
             window.location.href = '/index.html#sobaremi'; // Redirigir a index.html en el directorio raíz
         }
     }
