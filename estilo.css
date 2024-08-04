@@ -883,3 +883,43 @@ footer .arriba{
     margin-top: 70px;
     margin-left: 60px;
 }
+
+.filtro-y-agregar {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los filtros y el botón de agregar */
+    align-items: center;
+    margin-bottom: 20px; /* Espacio entre el contenedor de filtros y el contenido */
+}
+
+.filtro-categorias {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones de filtro */
+}
+
+.addProject {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #FEA609; /* Color del texto del botón */
+    border: 2px solid #fea609; /* Bordes del botón */
+    background-color: transparent; /* Sin fondo */
+    padding: 5px 10px; /* Relleno alrededor del botón */
+    border-radius: 5px; /* Bordes redondeados del botón */
+    margin-left: 50px;
+    transition: border-color 0.3s, color 0.3s; /* Transición suave para el hover */
+}
+
+.addProject:hover {
+    color: #fff; /* Color del texto en hover */
+    border-color: #fff; /* Color del borde en hover */
+}
+
+.addProject i {
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+}
+
+.addProject p {
+    margin: 0;
+}
+
+
